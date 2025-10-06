@@ -1,0 +1,144 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fffaf3;
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* === Card Container === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-card {
+  background: #fffdf9;
+  padding: 2.5rem 2rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  border: 1.5px solid #ffe3c3;
+}
+
+/* === Logo === */
+.logo {
+  width: 85px;
+  height: 85px;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+/* === Title & Note === */
+.login-title {
+  font-size: 1.6rem;
+  color: #ff8f45;
+  margin-bottom: 4px;
+}
+
+.login-note {
+  font-size: 0.9rem;
+  color: #8b7765;
+  margin-bottom: 1.8rem;
+}
+
+/* === Form Styling === */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1.8px solid #e7d8c9;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+  outline: none;
+  background-color: #fff;
+}
+
+.login-form input:focus {
+  border-color: #ffb26b;
+  box-shadow: 0 0 6px rgba(255, 178, 107, 0.3);
+  background-color: #fffaf5;
+}
+
+/* === Button === */
+.login-form button {
+  background-color: #3e3e3e;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 15px;
+  width: 100%;
+}
+
+.login-form button:hover {
+  background-color: #5a5a5a;
+}
+
+.login-form button:active {
+  transform: scale(0.97);
+}
+
+/* === Message & Loader === */
+.message {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #d46b08;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #ff9448;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+  margin: 15px auto 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+}
