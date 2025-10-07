@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="recipes-page">
+    <header>
+        <nav>
+            <div class="logo">Recipe Collection</div>
+            <div class="user-info">
+                <span id="welcome-message"></span>
+                <button id="logout-btn" class="btn btn-logout">LOGOUT</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="collection-header">
+            <h2>Your Recipe Collection</h2>
+            <p>Discover and manage your favorite recipes</p>
+        </div>
+
+        <div class="filter-controls">
+            <input type="text" id="search-input" placeholder="Search recipes by name, ingredients, etc...">
+            <select id="cuisine-filter">
+                <option value="">All Cuisines</option>
+            </select>
+            <span id="recipe-count"></span>
+        </div>
+
+        <div id="recipe-container" class="recipe-grid">
+            </div>
+
+        <div class="pagination">
+            <button id="show-more-btn" class="btn">Show More</button>
+        </div>
+    </main>
+
+    <div id="recipe-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>

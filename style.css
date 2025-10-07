@@ -1,144 +1,355 @@
 /* === Reset & Base === */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* === Page-Specific Backgrounds & Layout === */
 body {
-  background-color: #fffaf3;
-  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    color: #333; /* A neutral default color */
 }
 
-/* === Card Container === */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+#login-page {
+    background-color: #fffaf3;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-yellow-desserts-for-drawing-image_2909531.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.login-card {
-  background: #fffdf9;
-  padding: 2.5rem 2rem;
-  border-radius: 14px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 380px;
-  text-align: center;
-  border: 1.5px solid #ffe3c3;
+#recipes-page {
+    background-color: #f4f5f7;
 }
 
-/* === Logo === */
-.logo {
-  width: 85px;
-  height: 85px;
-  display: block;
-  margin: 0 auto 15px auto;
+/* === Login Page Styles (User Provided) === */
+
+#login-page .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
 }
 
-/* === Title & Note === */
-.login-title {
-  font-size: 1.6rem;
-  color: #ff8f45;
-  margin-bottom: 4px;
+#login-page .login-card {
+    background: #fffdf9;
+    padding: 2.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    border: 1.5px solid #ffe3c3;
 }
 
-.login-note {
-  font-size: 0.9rem;
-  color: #8b7765;
-  margin-bottom: 1.8rem;
+#login-page .login-card h1 {
+    font-size: 1.6rem;
+    color: #ff8f45;
+    margin-bottom: 4px;
 }
 
-/* === Form Styling === */
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+#login-page .login-card .notes {
+    font-size: 0.9rem;
+    color: #8b7765;
+    margin-bottom: 1.8rem;
 }
 
-.login-form input {
-  width: 100%;
-  padding: 10px;
-  border: 1.8px solid #e7d8c9;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: 0.3s;
-  outline: none;
-  background-color: #fff;
+#login-page #login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
-.login-form input:focus {
-  border-color: #ffb26b;
-  box-shadow: 0 0 6px rgba(255, 178, 107, 0.3);
-  background-color: #fffaf5;
+#login-page #login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1.8px solid #e7d8c9;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+    outline: none;
+    background-color: #fff;
 }
 
-/* === Button === */
-.login-form button {
-  background-color: #3e3e3e;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  padding: 12px;
-  margin-top: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 15px;
-  width: 100%;
+#login-page #login-form input:focus {
+    border-color: #ffb26b;
+    box-shadow: 0 0 6px rgba(255, 178, 107, 0.3);
+    background-color: #fffaf5;
 }
 
-.login-form button:hover {
-  background-color: #5a5a5a;
+#login-page #login-form button {
+    background-color: #3e3e3e;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 15px;
+    width: 100%;
 }
 
-.login-form button:active {
-  transform: scale(0.97);
+#login-page #login-form button:hover {
+    background-color: #5a5a5a;
 }
 
-/* === Message & Loader === */
-.message {
-  text-align: center;
-  margin-top: 15px;
-  font-weight: 600;
-  color: #d46b08;
+#login-page #login-form button:active {
+    transform: scale(0.97);
 }
 
+#login-page .message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Message colors from JS logic */
+#login-page .message.success { color: #28a745; }
+#login-page .message.error { color: #dc3545; }
+#login-page .message.loading { color: #d46b08; } /* Using user's theme color */
+
+
+/* === Recipes Page Styles (Original Preserved) === */
+
+#recipes-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Generic button for recipes page */
+#recipes-page .btn {
+    padding: 12px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+#recipes-page .btn:hover {
+    background-color: #444;
+}
+
+
+/* Header and Navbar */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0 20px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+}
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+nav .user-info {
+    display: flex;
+    align-items: center;
+}
+#welcome-message {
+    margin-right: 15px;
+    font-weight: 500;
+}
+.btn-logout {
+    width: auto;
+    padding: 8px 15px;
+}
+
+/* Collection Header */
+.collection-header {
+    text-align: center;
+    margin: 40px 0;
+}
+.collection-header h2 { font-size: 2.5em; margin-bottom: 5px; }
+.collection-header p { color: #777; }
+
+/* Filters */
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+#search-input {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+#cuisine-filter {
+    margin: 0 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+#recipe-count {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Recipe Grid & Cards */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+.recipe-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.recipe-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.recipe-card-content h3 { margin: 0 0 10px 0; }
+.recipe-card-content p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 4px 0;
+    flex-grow: 1;
+}
+.recipe-card-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.8em;
+    color: #888;
+}
+.recipe-card-rating { margin-top: 10px; }
+.recipe-card-content .btn {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* === Utility, Modal & Responsive === */
+.hidden { display: none !important; }
+
+/* Loader from user's code */
 .loader {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #ff9448;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  animation: spin 1s linear infinite;
-  margin: 15px auto 0;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ff9448;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+    margin: 15px auto 0;
 }
-
-.hidden {
-  display: none;
-}
-
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+    to { transform: rotate(360deg); }
 }
 
-/* === Responsive === */
-@media (max-width: 480px) {
-  .login-card {
-    padding: 2rem;
-  }
+/* Modal from original code */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #888;
+}
+#modal-body h2 { margin-top: 0; }
+#modal-body img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.modal-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+.detail-item {
+    background: #f4f5f7;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.detail-item span {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+}
+.detail-item strong {
+    font-size: 1.1em;
+}
+#modal-body h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+#modal-body ul, #modal-body ol {
+    padding-left: 20px;
+    line-height: 1.6;
+}
 
-  .logo {
-    width: 70px;
-    height: 70px;
-  }
+/* Responsive */
+@media (max-width: 480px) {
+    #login-page .login-card {
+        padding: 2rem 1.5rem;
+    }
 }
