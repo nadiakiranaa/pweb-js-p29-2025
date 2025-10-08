@@ -1,6 +1,6 @@
-/* ============================================== */
-/* === style.css: FINAL UNIFIED DESIGN (Warm Sunset Theme) === */
-/* ============================================== */
+/* ============================================================== */
+/* === style.css: FINAL UNIFIED DESIGN (Login Persis & Warm Sunset) === */
+/* ============================================================== */
 
 /* === Reset & Base === */
 * {
@@ -27,7 +27,7 @@ body {
 #recipes-page .btn {
     padding: 12px;
     border: none;
-    border-radius: 8px; /* Sudut membulat */
+    border-radius: 8px; 
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
@@ -36,11 +36,10 @@ body {
 
 
 /* ============================================== */
-/* === 1. LOGIN PAGE STYLES (Bright & Playful - Dipertahankan) === */
+/* === 1. LOGIN PAGE STYLES (MATCHING IMAGE) === */
 /* ============================================== */
 
 #login-page {
-    /* Menggunakan styling dari gambar login yang Anda berikan */
     background-color: #fffaf3;
     background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-yellow-desserts-for-drawing-image_2909531.jpg');
     background-size: cover; 
@@ -56,6 +55,7 @@ body {
     padding: 2.5rem 2rem;
     border-radius: 20px; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
     max-width: 400px; 
     text-align: center;
     border: none;
@@ -67,18 +67,65 @@ body {
     font-weight: 700;
 }
 
-#login-page .form-group { width: 100%; text-align: left; margin-bottom: 5px; }
-#login-page .form-group label { font-weight: 600; color: #4a4a4a; }
-#login-page #login-form input { border: 1px solid #e7d8c9; border-radius: 8px; }
-#login-page #login-form input:focus { border-color: #ff8f45; box-shadow: 0 0 6px rgba(255, 143, 69, 0.4); }
-
-#login-page #login-form button {
-    background-color: #3e3e3e;
-    color: #fff;
-    border-radius: 10px;
-    margin-top: 15px;
+#login-page .login-card .notes {
+    font-size: 0.9rem;
+    color: #8b7765;
+    margin-bottom: 1.8rem;
 }
-#login-page #login-form button:hover { background-color: #5a5a5a; }
+
+/* Form Layout, Margin, dan Alignment */
+#login-page #login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memposisikan semua elemen form di tengah */
+    gap: 12px;
+}
+
+#login-page .form-group { 
+    width: 100%; 
+    text-align: center; /* KUNCI: Membuat teks label rata tengah */
+    margin-bottom: 5px; 
+}
+
+#login-page .form-group label { 
+    font-weight: 600; 
+    color: #4a4a4a;
+    display: block; 
+    margin-bottom: 5px;
+}
+
+/* KUNCI: Margin setelah Password Input */
+#login-page #login-form .form-group:last-of-type {
+    margin-bottom: 20px; 
+}
+
+#login-page #login-form input { 
+    border: 1px solid #e7d8c9; 
+    border-radius: 8px; 
+    padding: 10px;
+    width: 100%;
+    max-width: 250px; /* KUNCI: Membatasi lebar input */
+    margin: 0 auto; /* Memastikan input rata tengah */
+}
+#login-page #login-form input:focus { 
+    border-color: #ff8f45; 
+    box-shadow: 0 0 6px rgba(255, 143, 69, 0.4); 
+}
+
+/* Tombol SIGN IN */
+#login-page #login-form button {
+    background-color: #444444; /* Abu-abu Gelap Solid */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 16px;
+    width: 250px; /* KUNCI: Lebar sama dengan input agar rata tengah */
+}
+
+#login-page #login-form button:hover { 
+    background-color: #5a5a5a; 
+}
 
 /* Loader dan Message styling */
 #login-page .message { text-align: center; margin-top: 15px; font-weight: 600; }
@@ -92,7 +139,6 @@ body {
 /* ============================================== */
 
 #recipes-page {
-    /* Background Krem Lembut untuk nuansa hangat */
     background-color: #FBF7F1; 
 }
 
@@ -102,191 +148,75 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
     padding: 0 20px; 
 }
-nav {
+nav { 
     max-width: 1200px; 
-    margin: 0 auto;
+    margin: 0 auto; 
     height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* KUNCI: Menyejajarkan semua elemen di tengah vertikal */
 }
-nav .logo {
-    font-size: 1.6em;
-    font-weight: 600;
-    color: #5C4B4B; /* Cokelat Tua */
-}
-#welcome-message {
-    color: #D46B08; /* Aksen Oranye */
-    font-weight: 600;
-}
-.btn-logout {
-    background-color: #5C4B4B; /* Cokelat Tua */
-    color: #ffffff;
-    border-radius: 8px;
-    padding: 8px 18px;
-}
-.btn-logout:hover {
-    background-color: #7a6868;
-}
+nav .logo { font-size: 1.6em; font-weight: 600; color: #5C4B4B; }
+nav .user-info { display: flex; align-items: center; gap: 10px; } /* Menyejajarkan elemen user info */
+#welcome-message { color: #D46B08; font-weight: 600; }
+.btn-logout { background-color: #5C4B4B; color: #ffffff; border-radius: 8px; padding: 8px 18px; margin: 0; }
+.btn-logout:hover { background-color: #7a6868; }
 
 /* Collection Header */
-.collection-header {
-    margin: 40px 0 30px 0;
-    text-align: center;
-}
-.collection-header h2 { 
-    font-size: 2.8em; 
-    font-weight: 800;
-    color: #D46B08; /* Judul Aksen Oranye */
-}
-.collection-header p { 
-    color: #8b7765; /* Cokelat Pucat */
-    font-size: 1.0em;
-    font-style: italic;
-    margin-top: 5px;
-}
+.collection-header { margin: 40px 0 30px 0; text-align: center; }
+.collection-header h2 { font-size: 2.8em; font-weight: 800; color: #D46B08; }
+.collection-header p { color: #8b7765; font-size: 1.0em; font-style: italic; margin-top: 5px; }
 
 /* Filters */
 .filter-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #FFFFFF; 
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); 
-    margin-bottom: 40px;
-    padding: 20px 30px;
-    border: 1px solid #ffe3c3; /* Border Oranye Pucat */
+    display: flex; justify-content: space-between; align-items: center;
+    background: #FFFFFF; border-radius: 12px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 40px; padding: 20px 30px; border: 1px solid #ffe3c3; 
 }
-#search-input, #cuisine-filter {
-    border: 1px solid #e7d8c9;
-    background-color: #fff;
-    color: #333333;
-    border-radius: 8px; 
-    padding: 12px; 
-}
-#search-input:focus, #cuisine-filter:focus {
-    border-color: #FF8F45; 
-    box-shadow: 0 0 0 3px rgba(255, 143, 69, 0.2);
-}
-#recipe-count {
-    color: #8b7765;
-    font-weight: 500;
-}
+#search-input, #cuisine-filter { border: 1px solid #e7d8c9; background-color: #fff; color: #333333; border-radius: 8px; padding: 12px; }
+#search-input:focus, #cuisine-filter:focus { border-color: #FF8F45; box-shadow: 0 0 0 3px rgba(255, 143, 69, 0.2); }
+#recipe-count { color: #8b7765; font-weight: 500; }
 
 /* Recipe Grid & Cards */
-.recipe-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
+.recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
 .recipe-card {
-    border-radius: 16px; /* Sudut sangat membulat */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Shadow yang hangat */
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #FFFFFF; 
-    color: #333333; 
-    
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 2px solid #fff5e6; /* Border dalam oranye sangat pucat */
+    border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #FFFFFF; color: #333333; display: flex; flex-direction: column; overflow: hidden;
+    border: 2px solid #fff5e6;
 }
-.recipe-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2); 
-}
+.recipe-card:hover { transform: translateY(-5px); box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2); }
 
 /* Gambar (Mendekati Kotak) */
-.recipe-card img {
-    width: 100%; 
-    height: 250px; /* Tinggi tetap untuk mempertahankan rasio di grid */
-    object-fit: cover;
-    border-radius: 14px 14px 0 0;
-}
+.recipe-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 14px 14px 0 0; }
 
-.recipe-card-content {
-    padding: 20px 20px 25px 20px;
-    flex-grow: 1;
-}
-.recipe-card-content h3 { 
-    font-size: 1.3em; 
-    font-weight: 700;
-    color: #D46B08; /* Judul Aksen */
-    margin: 0 0 5px 0;
-}
-
-.recipe-card-details {
-    color: #999999; 
-    font-size: 0.8em;
-    font-weight: 500;
-    border-bottom: 1px dashed #eee;
-    padding-bottom: 8px;
-    margin-bottom: 10px;
-}
-
-.recipe-card-content p {
-    color: #666666; 
-    font-size: 0.9em;
-    flex-grow: 1;
-    margin-bottom: 15px;
-}
-.recipe-card-rating { 
-    color: gold; 
-    font-size: 1.1em;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
+.recipe-card-content { padding: 20px 20px 25px 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.recipe-card-content h3 { font-size: 1.3em; font-weight: 700; color: #D46B08; margin: 0 0 5px 0; }
+.recipe-card-details { color: #999999; font-size: 0.8em; font-weight: 500; border-bottom: 1px dashed #eee; padding-bottom: 8px; margin-bottom: 10px; }
+.recipe-card-content p { color: #666666; font-size: 0.9em; flex-grow: 1; margin-bottom: 15px; }
+.recipe-card-rating { color: gold; font-size: 1.1em; margin-top: 5px; margin-bottom: 15px; }
 
 /* Tombol View Full Recipe */
-.recipe-card-content .btn {
-    background-color: #5C4B4B; /* Cokelat Tua */
-    color: #ffffff; 
-    border-radius: 8px;
-    padding: 10px;
-}
-.recipe-card-content .btn:hover {
-    background-color: #D46B08; /* Berubah ke Oranye saat hover */
-}
+.recipe-card-content .btn { background-color: #5C4B4B; color: #ffffff; border-radius: 8px; padding: 10px; width: 100%; margin-top: auto; }
+.recipe-card-content .btn:hover { background-color: #D46B08; }
 
 /* Pagination (Show More) */
-.pagination {
-    margin: 40px 0;
-}
-#recipes-page .btn {
-    background-color: #D46B08; /* Tombol utama Oranye */
-    color: #ffffff;
-    padding: 14px 30px; 
-    border-radius: 8px;
-}
-#recipes-page .btn:hover {
-    background-color: #FF8F45;
-}
+.pagination { margin: 40px 0; }
+#recipes-page .btn { background-color: #D46B08; color: #ffffff; padding: 14px 30px; border-radius: 8px; }
+#recipes-page .btn:hover { background-color: #FF8F45; }
 
 
 /* === Modal Styles (Disesuaikan dengan tema hangat) === */
-.modal-overlay {
-    background: rgba(0, 0, 0, 0.6);
-}
-.modal-content {
-    background: #FFFFFF;
-    border-radius: 15px;
-}
-.detail-item {
-    background: #fffaf3; /* Background krem/hangat */
-    border-radius: 10px;
-    padding: 12px 10px;
-}
+.modal-overlay { background: rgba(0, 0, 0, 0.6); }
+.modal-content { background: #FFFFFF; border-radius: 15px; }
+.detail-item { background: #fffaf3; border-radius: 10px; padding: 12px 10px; }
 .detail-item strong { color: #333; font-weight: 700; }
-#modal-body h3 {
-    color: #D46B08; /* Heading modal warna oranye */
-    border-bottom: 2px solid #D46B08;
-}
+#modal-body h3 { color: #D46B08; border-bottom: 2px solid #D46B08; }
 
-/* === Responsive Adjustments (Dipertahankan) === */
+/* === Responsive Adjustments === */
 @media (max-width: 768px) {
     header { padding: 0 20px; }
-    
     nav { flex-direction: column; height: auto; padding: 10px 20px; gap: 10px; }
     nav .user-info { width: 100%; justify-content: space-between; }
-
     .filter-controls { flex-direction: column; padding: 20px 10px; }
     #search-input { margin: 0; width: 100%; }
     #cuisine-filter { margin: 0; width: 100%; }
@@ -295,7 +225,5 @@ nav .logo {
 
 @media (max-width: 480px) {
     .recipe-grid { grid-template-columns: 1fr; }
-    .recipe-card img {
-        height: 300px; /* Menjaga rasio visual tetap kotak pada mobile */
-    }
+    .recipe-card img { height: 300px; }
 }
