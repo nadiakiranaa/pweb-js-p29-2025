@@ -151,6 +151,12 @@ function initRecipesPage() {
                         <span>${recipe.difficulty}</span>
                         <span>${recipe.cuisine}</span>
                     </div>
+
+                    <div class="recipe-card-tags">
+    ${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+</div>
+<p><strong>Ingredients:</strong> ${recipe.ingredients.slice(0, 5).join(', ')}...</p>
+
                     <p><strong>Ingredients:</strong> ${recipe.ingredients.slice(0, 5).join(', ')}...</p>
                     <div class="recipe-card-rating">Rating: ${'★'.repeat(Math.round(recipe.rating))}${'☆'.repeat(5 - Math.round(recipe.rating))} (${recipe.rating})</div>
                     <button class="btn view-recipe-btn" data-id="${recipe.id}">View Full Recipe</button>

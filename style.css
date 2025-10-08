@@ -99,7 +99,7 @@ body {
 }
 
 #login-page #login-form button {
-    background-color: #444444;
+    background-color: #c55f16;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -109,7 +109,7 @@ body {
 }
 
 #login-page #login-form button:hover { 
-    background-color: #5a5a5a; 
+    background-color: #ffbd83; 
 }
 
 #login-page .message { text-align: center; margin-top: 15px; font-weight: 600; }
@@ -396,4 +396,20 @@ nav .user-info { display: flex; align-items: center; gap: 10px; }
     .recipe-grid { grid-template-columns: 1fr; }
     .recipe-card img { height: 200px; }
     .modal-content { padding: 20px; }
+}
+
+.recipe-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0; 
+}
+
+.tag {
+    background-color: #fee4d8;
+    color: #5C4B4B;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 600;
 }
