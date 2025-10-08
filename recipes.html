@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Collection</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="recipes-page">
+
+    <div class="floating-icons">
+        <span>🍓</span>
+        <span>🥕</span>
+        <span>🍕</span>
+        <span>🍪</span>
+        <span>🥑</span>
+        <span>🌿</span>
+        <span>🍳</span>
+        <span>🥐</span>
+        <span>🍋</span>
+        <span>🍅</span>
+
+    </div>
     <header>
         <nav>
             <div class="logo">Recipe Collection</div>
@@ -21,10 +37,14 @@
     </header>
 
     <main class="container">
-        <div class="collection-header">
-            <h2>Your Recipe Collection</h2>
-            <p>Discover and manage your favorite recipes</p>
-        </div>
+       <div class="collection-header">
+    <div class="title-with-icons">
+        <i class="fa-solid fa-spoon icon-spoon"></i>
+        <h2>Your Recipe Collection</h2>
+        <i class="fa-solid fa-fork icon-fork"></i>
+    </div>
+    <p>Discover and manage your favorite recipes</p>
+</div> 
 
         <div class="filter-controls">
             <input type="text" id="search-input" placeholder="Search recipes by name, ingredients, etc...">

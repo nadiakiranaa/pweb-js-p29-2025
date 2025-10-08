@@ -8,11 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// =================================================================
-// LOGIN PAGE LOGIC
-// =================================================================
+
 function initLoginPage() {
-    // Redirect if already logged in
     if (localStorage.getItem('user')) {
         window.location.href = 'recipes.html';
         return;
@@ -34,8 +31,6 @@ function initLoginPage() {
         showMessage('Logging in...', 'loading');
 
         try {
-            // NOTE: DummyJSON's /users endpoint doesn't support password auth.
-            // We use its dedicated /auth/login endpoint for a realistic login flow.
             const response = await fetch('https://dummyjson.com/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -45,11 +40,9 @@ function initLoginPage() {
             const data = await response.json();
 
             if (!response.ok) {
-                // Use the error message from the API if available
                 throw new Error(data.message || 'Login failed');
             }
 
-            // Save user data to localStorage
             localStorage.setItem('user', JSON.stringify({
                 id: data.id,
                 username: data.username,
@@ -58,7 +51,6 @@ function initLoginPage() {
             
             showMessage('Login successful! Redirecting...', 'success');
 
-            // Redirect to recipes page
             setTimeout(() => {
                 window.location.href = 'recipes.html';
             }, 1000);
@@ -74,25 +66,18 @@ function initLoginPage() {
     }
 }
 
-
-// =================================================================
-// RECIPES PAGE LOGIC
-// =================================================================
 function initRecipesPage() {
-    // --- Auth Guard ---
     const user = JSON.parse(localStorage.getItem('user'));
     if (!user) {
         window.location.href = 'index.html';
         return;
     }
 
-    // --- State Variables ---
     let allRecipes = [];
     let filteredRecipes = [];
     let displayedCount = 9;
     const RECIPES_PER_PAGE = 9;
 
-    // --- DOM Elements ---
     const welcomeMessage = document.getElementById('welcome-message');
     const logoutBtn = document.getElementById('logout-btn');
     const recipeContainer = document.getElementById('recipe-container');
@@ -104,11 +89,9 @@ function initRecipesPage() {
     const modalBody = document.getElementById('modal-body');
     const modalCloseBtn = document.querySelector('.modal-close-btn');
 
-    // --- Initial Setup ---
     welcomeMessage.textContent = `Welcome, ${user.firstName}!`;
     fetchRecipes();
 
-    // --- Event Listeners ---
     logoutBtn.addEventListener('click', () => {
         localStorage.removeItem('user');
         window.location.href = 'index.html';
@@ -124,10 +107,8 @@ function initRecipesPage() {
         }
     });
 
-    // --- Functions ---
     async function fetchRecipes() {
         try {
-            // Using limit=0 to fetch all recipes from the API
             const response = await fetch('https://dummyjson.com/recipes?limit=0');
             if (!response.ok) throw new Error('Failed to fetch recipes.');
             const data = await response.json();
@@ -151,7 +132,7 @@ function initRecipesPage() {
     }
     
     function renderRecipes() {
-        recipeContainer.innerHTML = ''; // Clear existing recipes
+        recipeContainer.innerHTML = ''; 
         const recipesToRender = filteredRecipes.slice(0, displayedCount);
 
         if (recipesToRender.length === 0) {
@@ -178,7 +159,6 @@ function initRecipesPage() {
             recipeContainer.appendChild(card);
         });
 
-        // Add event listeners to new buttons
         document.querySelectorAll('.view-recipe-btn').forEach(button => {
             button.addEventListener('click', () => showRecipeDetails(button.dataset.id));
         });
@@ -200,7 +180,7 @@ function initRecipesPage() {
             return matchesCuisine && matchesSearch;
         });
         
-        displayedCount = RECIPES_PER_PAGE; // Reset display count on filter change
+        displayedCount = RECIPES_PER_PAGE; 
         renderRecipes();
     }
 
@@ -248,7 +228,6 @@ function initRecipesPage() {
         modal.classList.remove('hidden');
     }
 
-    // Debounce function to limit how often a function gets called
     function debounce(func, delay) {
         let timeout;
         return function(...args) {
